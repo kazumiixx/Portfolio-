@@ -2,17 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kazuyoshi Joseph Ferrer | Portfolio</title>
 
+
     <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+
 
     <style>
 
@@ -26,12 +29,44 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7fcff;
-            color: #4d6375;
+            background-color: #f8fcff;
+            color: #506779;
+            overflow-x: hidden;
         }
 
         section {
-            scroll-margin-top: 75px;
+            scroll-margin-top: 80px;
+        }
+
+
+        /* =========================
+           SCROLL ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.7);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s cubic-bezier(.34, 1.56, .64, 1);
+        }
+
+        .bounce-in.show {
+            opacity: 1;
+            transform: scale(1);
         }
 
 
@@ -41,7 +76,7 @@
 
         .navbar {
             background-color: #8ecae6;
-            box-shadow: 0 4px 15px rgba(90, 150, 190, 0.15);
+            box-shadow: 0 4px 18px rgba(90, 150, 190, 0.18);
         }
 
         .navbar-brand {
@@ -52,14 +87,16 @@
         .nav-link {
             color: white !important;
             font-weight: 600;
-            margin-left: 10px;
-            border-radius: 20px;
+            margin-left: 8px;
             padding: 8px 15px !important;
+            border-radius: 20px;
+            transition: 0.25s ease;
         }
 
         .nav-link:hover {
-            background-color: #bde8fa;
-            color: #41677d !important;
+            background-color: #c8edfc;
+            color: #426a80 !important;
+            transform: translateY(-2px);
         }
 
         .navbar-toggler {
@@ -72,57 +109,105 @@
 
 
         /* =========================
-           INTRO / HOME
+           HOME
         ========================= */
 
         .intro-section {
             position: relative;
             overflow: hidden;
             background-color: #dff5ff;
-            padding: 70px 0 90px;
+            padding: 75px 0 100px;
         }
 
         .intro-section::before {
             content: "☁";
             position: absolute;
-            top: 30px;
+            top: 40px;
             left: 5%;
-            font-size: 70px;
+            font-size: 85px;
             color: white;
-            opacity: 0.8;
+            opacity: 0.75;
+            animation: floatCloud 5s ease-in-out infinite;
         }
 
         .intro-section::after {
             content: "☁";
             position: absolute;
-            bottom: 30px;
-            right: 7%;
-            font-size: 90px;
+            right: 5%;
+            bottom: 40px;
+            font-size: 110px;
             color: white;
-            opacity: 0.8;
+            opacity: 0.75;
+            animation: floatCloud 6s ease-in-out infinite reverse;
         }
 
+
+        /* =========================
+           FLOATING CLOUD ANIMATION
+        ========================= */
+
+        @keyframes floatCloud {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
         .profile-image {
-            width: 190px;
-            height: 190px;
+            width: 195px;
+            height: 195px;
             object-fit: cover;
-            border: 7px solid white;
-            box-shadow: 0 8px 25px rgba(70, 140, 180, 0.2);
+            border: 8px solid white;
+            box-shadow:
+                0 8px 25px rgba(80, 150, 190, 0.2);
+            transition: 0.35s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow:
+                0 12px 30px rgba(80, 150, 190, 0.3);
         }
 
         .profile-cloud {
-            color: #ffffff;
             font-size: 35px;
+            color: white;
             margin-top: 12px;
+            animation: floatCloud 3s ease-in-out infinite;
         }
+
+
+        /* =========================
+           NAME
+        ========================= */
 
         .name-box {
             display: inline-block;
-            background-color: #91cfee;
+            background-color: #8ecae6;
             color: white;
-            border-radius: 25px;
-            padding: 12px 22px;
-            box-shadow: 0 5px 15px rgba(90, 160, 200, 0.15);
+            border-radius: 28px;
+            padding: 13px 23px;
+            box-shadow:
+                0 6px 18px rgba(70, 150, 190, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .name-box:hover {
+            transform: scale(1.03);
         }
 
         .name-box h1 {
@@ -132,28 +217,47 @@
 
         .course-box {
             display: inline-block;
-            margin-top: 15px;
             background-color: #c7e8f8;
             color: #466b80;
-            border-radius: 20px;
-            padding: 9px 18px;
+            border-radius: 22px;
+            padding: 10px 18px;
+            margin-top: 15px;
             font-weight: 600;
+            transition: 0.3s ease;
         }
+
+        .course-box:hover {
+            transform: translateX(5px);
+            background-color: #b5e1f6;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-box {
             background-color: white;
-            border: 4px solid #b9e4f7;
+            border: 4px solid #b8e4f7;
             border-radius: 30px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(70, 140, 180, 0.12);
+            padding: 32px;
+            box-shadow:
+                0 8px 25px rgba(70, 140, 180, 0.12);
+            transition: 0.3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 12px 30px rgba(70, 140, 180, 0.18);
         }
 
         .about-title {
             display: inline-block;
             background-color: #9dd9f4;
             color: white;
-            border-radius: 18px;
-            padding: 8px 18px;
+            border-radius: 20px;
+            padding: 9px 19px;
             font-weight: bold;
         }
 
@@ -171,25 +275,27 @@
             color: white;
             border: none;
             border-radius: 25px;
-            padding: 11px 22px;
+            padding: 11px 23px;
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
-            transition: 0.2s ease;
+            transition: 0.25s ease;
         }
 
         .pastel-button:hover {
-            background-color: #72b8d8;
+            background-color: #6fb8da;
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow:
+                0 6px 15px rgba(70, 150, 190, 0.2);
         }
 
         .pink-button {
-            background-color: #e9b7d4;
+            background-color: #e8b8d4;
         }
 
         .pink-button:hover {
-            background-color: #d99abd;
+            background-color: #d79bbc;
         }
 
 
@@ -202,8 +308,13 @@
             background-color: #9dd9f4;
             color: white;
             border-radius: 25px;
-            padding: 10px 25px;
+            padding: 11px 26px;
             font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .section-title:hover {
+            transform: scale(1.06);
         }
 
 
@@ -223,14 +334,29 @@
             padding: 11px 17px;
             border-radius: 20px;
             margin: 5px;
+            transition: 0.25s ease;
+            cursor: default;
         }
 
-        .skill-badge:nth-child(3n) {
+        .skill-badge:hover {
+            transform: translateY(-7px) scale(1.12);
+            box-shadow:
+                0 7px 15px rgba(90, 150, 190, 0.18);
+        }
+
+
+        /* Different pastel colors */
+
+        .skill-pink {
+            background-color: #f2c7dc !important;
+        }
+
+        .skill-purple {
             background-color: #d8c9f0 !important;
         }
 
-        .skill-badge:nth-child(4n) {
-            background-color: #f2c7dc !important;
+        .skill-white {
+            background-color: #dff5ff !important;
         }
 
 
@@ -246,18 +372,33 @@
             border: none;
             border-radius: 30px;
             background-color: white;
-            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
-            transition: 0.25s ease;
+            overflow: hidden;
+            box-shadow:
+                0 7px 22px rgba(100, 120, 170, 0.12);
+            transition: 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 12px 28px rgba(100, 120, 170, 0.18);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                0 15px 30px rgba(100, 120, 170, 0.2);
         }
 
-        .project-cloud {
-            font-size: 45px;
-            color: #9dd9f4;
+        .project-image {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 22px;
+            transition: 0.4s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .image-container {
+            overflow: hidden;
+            border-radius: 22px;
         }
 
         .project-title {
@@ -265,14 +406,16 @@
             background-color: #a9def9;
             color: #36566b;
             border-radius: 18px;
-            padding: 8px 15px;
+            padding: 9px 15px;
             font-weight: bold;
             text-decoration: none;
+            transition: 0.25s ease;
         }
 
         .project-title:hover {
             background-color: #8ecae6;
             color: white;
+            transform: scale(1.04);
         }
 
         .project-card p {
@@ -292,7 +435,14 @@
             background-color: white;
             border-radius: 30px;
             padding: 35px;
-            box-shadow: 0 8px 25px rgba(70, 140, 180, 0.13);
+            box-shadow:
+                0 8px 25px rgba(70, 140, 180, 0.13);
+            transition: 0.3s ease;
+        }
+
+        .contact-box:hover {
+            box-shadow:
+                0 12px 30px rgba(70, 140, 180, 0.18);
         }
 
         .form-label {
@@ -304,11 +454,14 @@
             border: 2px solid #c5e8f8;
             border-radius: 15px;
             padding: 12px;
+            transition: 0.25s ease;
         }
 
         .form-control:focus {
             border-color: #8ecae6;
-            box-shadow: 0 0 0 0.2rem rgba(142, 202, 230, 0.2);
+            box-shadow:
+                0 0 0 0.2rem rgba(142, 202, 230, 0.2);
+            transform: scale(1.01);
         }
 
         .contact-info {
@@ -327,7 +480,38 @@
             color: white;
         }
 
+
+        /* =========================
+           SMALL SCREENS
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .intro-section {
+                padding: 55px 0 70px;
+            }
+
+            .profile-image {
+                width: 160px;
+                height: 160px;
+            }
+
+            .name-box h1 {
+                font-size: 2rem;
+            }
+
+            .about-box {
+                padding: 24px;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+
+        }
+
     </style>
+
 </head>
 
 
@@ -344,12 +528,15 @@
 
             <div class="container">
 
-                <a class="navbar-brand" href="#home">
+                <a
+                    class="navbar-brand"
+                    href="#home"
+                >
                     ☁️ Kazuyoshi Ferrer
                 </a>
 
 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile Menu -->
 
                 <button
                     class="navbar-toggler"
@@ -360,38 +547,66 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
 
 
-                <!-- Navigation Links -->
+                <!-- Navigation -->
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarNav"
+                >
 
                     <ul class="navbar-nav ms-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">
+
+                            <a
+                                class="nav-link"
+                                href="#home"
+                            >
                                 Home
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#skills">
+
+                            <a
+                                class="nav-link"
+                                href="#skills"
+                            >
                                 Skills
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#projects">
+
+                            <a
+                                class="nav-link"
+                                href="#projects"
+                            >
                                 Projects
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">
+
+                            <a
+                                class="nav-link"
+                                href="#contact"
+                            >
                                 Contact
                             </a>
+
                         </li>
 
                     </ul>
@@ -413,14 +628,17 @@
              HOME / ABOUT
         ========================= -->
 
-        <section id="home" class="intro-section">
+        <section
+            id="home"
+            class="intro-section"
+        >
 
             <div class="container">
 
 
-                <!-- Profile Picture -->
+                <!-- PROFILE -->
 
-                <div class="text-center mb-5">
+                <div class="text-center mb-5 bounce-in">
 
                     <img
                         src="images/profile.jpg"
@@ -436,14 +654,14 @@
 
 
 
-                <!-- Name + About -->
+                <!-- NAME + ABOUT -->
 
                 <div class="row align-items-center g-5">
 
 
-                    <!-- LEFT: NAME -->
+                    <!-- NAME -->
 
-                    <div class="col-lg-5 text-center text-lg-start">
+                    <div class="col-lg-5 text-center text-lg-start reveal">
 
                         <div class="name-box">
 
@@ -453,14 +671,18 @@
 
                         </div>
 
+
                         <br>
 
+
                         <div class="course-box">
+
                             Bachelor of Science in Information Systems
+
                         </div>
 
 
-                        <!-- Quick Navigation Buttons -->
+                        <!-- Navigation Buttons -->
 
                         <div class="mt-4">
 
@@ -484,29 +706,37 @@
 
 
 
-                    <!-- RIGHT: ABOUT -->
+                    <!-- ABOUT -->
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 reveal">
 
                         <div class="about-box">
 
                             <h2 class="about-title mb-3">
+
                                 About Me
+
                             </h2>
 
+
                             <p>
+
                                 I am a Bachelor of Science in Information
                                 Systems student interested in technology
                                 and how it can be used to improve businesses
                                 and everyday processes.
+
                             </p>
 
+
                             <p class="mb-0">
+
                                 I enjoy learning about programming, databases,
                                 web development, and different technologies.
                                 I am continuously improving my skills and
-                                gaining experience by working on different
-                                school projects.
+                                gaining experience through different school
+                                projects.
+
                             </p>
 
                         </div>
@@ -525,65 +755,86 @@
              SKILLS
         ========================= -->
 
-        <section id="skills" class="skills-section py-5">
+        <section
+            id="skills"
+            class="skills-section py-5"
+        >
 
-            <div class="container text-center">
+            <div class="container text-center reveal">
+
 
                 <h2 class="section-title mb-4">
+
                     My Skills
+
                 </h2>
 
+
                 <p class="mb-4">
-                    Some of the technologies and skills I have learned
+
+                    Technologies and skills I have learned
                     through my studies and projects.
+
                 </p>
 
 
                 <div>
 
+
                     <span class="badge skill-badge">
                         HTML
                     </span>
+
 
                     <span class="badge skill-badge">
                         CSS
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-purple">
                         Bootstrap
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-pink">
                         C#
                     </span>
+
 
                     <span class="badge skill-badge">
                         Java
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-purple">
                         SQL
                     </span>
+
 
                     <span class="badge skill-badge">
                         GitHub
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-pink">
                         NetBeans
                     </span>
+
 
                     <span class="badge skill-badge">
                         VS Code
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-purple">
                         Problem Solving
                     </span>
 
-                    <span class="badge skill-badge">
+
+                    <span class="badge skill-badge skill-pink">
                         Teamwork
                     </span>
+
 
                     <span class="badge skill-badge">
                         Communication
@@ -601,14 +852,20 @@
              PROJECTS
         ========================= -->
 
-        <section id="projects" class="projects-section py-5">
+        <section
+            id="projects"
+            class="projects-section py-5"
+        >
 
             <div class="container">
 
-                <div class="text-center mb-5">
+
+                <div class="text-center mb-5 reveal">
 
                     <h2 class="section-title">
+
                         My Projects
+
                     </h2>
 
                 </div>
@@ -621,18 +878,27 @@
 
                     <!-- PROJECT 1 -->
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 reveal">
 
                         <div class="card project-card h-100">
 
                             <div class="card-body p-4">
 
-                                <div class="project-cloud mb-3">
-                                    ☁️
+
+                                <!-- Project Image -->
+
+                                <div class="image-container mb-4">
+
+                                    <img
+                                        src="images/cinnamoroll-cake-shop.jpg"
+                                        alt="Cinnamoroll Cake Shop Payroll System"
+                                        class="project-image"
+                                    >
+
                                 </div>
 
 
-                                <!-- Project title is also the required link -->
+                                <!-- Project Title -->
 
                                 <a
                                     href="#contact"
@@ -655,9 +921,11 @@
 
                                 <div>
 
+
                                     <span class="badge skill-badge">
                                         NetBeans
                                     </span>
+
 
                                     <span class="badge skill-badge">
                                         SQL
@@ -675,16 +943,27 @@
 
                     <!-- PROJECT 2 -->
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 reveal">
 
                         <div class="card project-card h-100">
 
                             <div class="card-body p-4">
 
-                                <div class="project-cloud mb-3">
-                                    ☁️
+
+                                <!-- Project Image -->
+
+                                <div class="image-container mb-4">
+
+                                    <img
+                                        src="images/crm-project.jpg"
+                                        alt="CRM Research Project"
+                                        class="project-image"
+                                    >
+
                                 </div>
 
+
+                                <!-- Project Title -->
 
                                 <a
                                     href="#contact"
@@ -707,15 +986,18 @@
 
                                 <div>
 
-                                    <span class="badge skill-badge">
+
+                                    <span class="badge skill-badge skill-purple">
                                         Research
                                     </span>
+
 
                                     <span class="badge skill-badge">
                                         Google Scholar
                                     </span>
 
-                                    <span class="badge skill-badge">
+
+                                    <span class="badge skill-badge skill-pink">
                                         Mendeley
                                     </span>
 
@@ -730,9 +1012,9 @@
                 </div>
 
 
-                <!-- More Projects Button -->
+                <!-- Projects Button -->
 
-                <div class="text-center mt-5">
+                <div class="text-center mt-5 reveal">
 
                     <a
                         href="#contact"
@@ -753,36 +1035,50 @@
              CONTACT
         ========================= -->
 
-        <section id="contact" class="contact-section py-5">
+        <section
+            id="contact"
+            class="contact-section py-5"
+        >
 
             <div class="container">
 
-                <div class="text-center mb-5">
+
+                <div class="text-center mb-5 reveal">
 
                     <h2 class="section-title">
+
                         Contact Me
+
                     </h2>
 
+
                     <p class="mt-3">
+
                         Have a question or want to get in touch?
                         Send me a message below.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="row justify-content-center">
 
-                    <div class="col-lg-8">
+
+                    <div class="col-lg-8 reveal">
+
 
                         <div class="contact-box">
 
 
-                            <!-- Contact Information -->
+                            <!-- EMAIL -->
 
                             <div class="contact-info mb-4">
 
-                                <strong>Email:</strong>
+                                <strong>
+                                    Email:
+                                </strong>
 
                                 <a
                                     href="mailto:kazuyoshijoseph.ferrer@antipolo.benilde.edu.ph"
@@ -803,7 +1099,7 @@
                             >
 
 
-                                <!-- Name -->
+                                <!-- NAME -->
 
                                 <div class="mb-3">
 
@@ -813,6 +1109,7 @@
                                     >
                                         Name
                                     </label>
+
 
                                     <input
                                         type="text"
@@ -827,7 +1124,7 @@
 
 
 
-                                <!-- Email -->
+                                <!-- EMAIL -->
 
                                 <div class="mb-3">
 
@@ -837,6 +1134,7 @@
                                     >
                                         Email
                                     </label>
+
 
                                     <input
                                         type="email"
@@ -851,7 +1149,7 @@
 
 
 
-                                <!-- Subject -->
+                                <!-- SUBJECT -->
 
                                 <div class="mb-3">
 
@@ -861,6 +1159,7 @@
                                     >
                                         Subject
                                     </label>
+
 
                                     <input
                                         type="text"
@@ -875,7 +1174,7 @@
 
 
 
-                                <!-- Message -->
+                                <!-- MESSAGE -->
 
                                 <div class="mb-4">
 
@@ -885,6 +1184,7 @@
                                     >
                                         Message
                                     </label>
+
 
                                     <textarea
                                         class="form-control"
@@ -899,7 +1199,7 @@
 
 
 
-                                <!-- Send Button -->
+                                <!-- SEND -->
 
                                 <div class="text-center">
 
@@ -921,9 +1221,10 @@
                 </div>
 
 
-                <!-- GitHub -->
 
-                <div class="text-center mt-4">
+                <!-- GITHUB -->
+
+                <div class="text-center mt-4 reveal">
 
                     <a
                         href="https://github.com/kazumiixx"
@@ -967,6 +1268,46 @@
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
+
+
+
+    <!-- Scroll Animation -->
+
+    <script>
+
+        const animatedElements =
+            document.querySelectorAll(".reveal, .bounce-in");
+
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        animatedElements.forEach((element) => {
+
+            observer.observe(element);
+
+        });
+
+    </script>
+
 
 </body>
 
