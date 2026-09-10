@@ -13,7 +13,9 @@
     >
 
     <style>
-        /* GENERAL */
+        /* =========================
+           GENERAL
+        ========================= */
 
         html {
             scroll-behavior: smooth;
@@ -22,49 +24,48 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(
-                135deg,
-                #dff5ff,
-                #e8e0ff,
-                #f8e8ff
-            );
-            color: #4d5f78;
+            color: #40556f;
+            background-color: #f7fbff;
+        }
+
+        section {
+            scroll-margin-top: 80px;
         }
 
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
 
         .navbar {
-            background-color: #91cbed !important;
-            box-shadow: 0 4px 15px rgba(80, 150, 190, 0.2);
+            background-color: rgba(255, 255, 255, 0.96) !important;
+            box-shadow: 0 3px 18px rgba(76, 108, 140, 0.10);
+            padding: 12px 0;
         }
 
         .navbar-brand {
-            color: white !important;
-            font-weight: bold;
-            font-size: 1.2rem;
+            color: #6d9fc1 !important;
+            font-weight: 700;
+            letter-spacing: 0.3px;
             transition: 0.3s ease;
         }
 
         .navbar-brand:hover {
-            background-color: #f3a9c8;
-            color: white !important;
-            padding: 6px 12px;
-            border-radius: 15px;
+            color: #df8faf !important;
         }
 
         .nav-link {
-            color: white !important;
+            color: #536b84 !important;
             font-weight: 600;
-            border-radius: 15px;
             padding: 8px 14px !important;
-            margin: 0 3px;
+            margin: 0 2px;
+            border-radius: 14px;
             transition: 0.3s ease;
         }
 
         .nav-link:hover {
-            background-color: #f3a9c8 !important;
-            color: white !important;
+            background-color: #f3c4d7;
+            color: #c96f94 !important;
         }
 
         .navbar-toggler {
@@ -76,264 +77,423 @@
         }
 
 
-        /* HOME */
+        /* =========================
+           HERO / HOME
+        ========================= */
 
         #home {
-            min-height: auto;
-            padding-top: 100px;
-            padding-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            padding: 125px 0 85px;
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(210, 237, 250, 0.8),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(226, 220, 248, 0.8),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f8fcff,
+                    #f3f1ff
+                );
+        }
+
+        .cloud-decoration {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        .cloud-one {
+            top: 100px;
+            left: 6%;
+        }
+
+        .cloud-two {
+            top: 190px;
+            right: 8%;
+            font-size: 3rem;
         }
 
         .profile-image {
-            width: 190px;
-            height: 190px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
             border: 7px solid white;
-            box-shadow: 0 8px 25px rgba(80, 150, 190, 0.25);
+            box-shadow: 0 12px 30px rgba(84, 139, 175, 0.18);
             display: block;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 35px;
             transition: 0.3s ease;
         }
 
         .profile-image:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 16px 35px rgba(84, 139, 175, 0.25);
         }
 
-        .name-box {
-            background-color: #91cbed;
-            color: white;
-            padding: 25px;
-            border-radius: 30px;
-            box-shadow: 0 7px 20px rgba(80, 150, 190, 0.15);
+        .hero-content {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .hero-intro {
+            padding: 10px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: #6c9bbb;
+            background-color: #e6f5fc;
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
             transition: 0.3s ease;
         }
 
-        .name-box:hover {
-            background-color: #f3a9c8;
-            transform: translateY(-5px);
+        .hero-label:hover {
+            background-color: #f3c4d7;
+            color: #c96f94;
         }
 
-        .name-box h1 {
-            font-size: 2.4rem;
-            font-weight: bold;
+        .hero-title {
+            color: #40556f;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-title span {
+            color: #78add0;
+            transition: 0.3s ease;
+        }
+
+        .hero-title span:hover {
+            color: #d883a5;
+        }
+
+        .hero-subtitle {
+            color: #6c7f94;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            color: #66788c;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .primary-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #8fc8e8;
+            color: white;
+            padding: 11px 22px;
+            border-radius: 16px;
+            font-weight: 700;
+            margin-right: 8px;
+            transition: 0.3s ease;
+        }
+
+        .primary-button:hover {
+            background-color: #e9a2bf;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: white;
+            color: #6797b8;
+            border: 2px solid #b8ddef;
+            padding: 9px 22px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: #f3c4d7;
+            border-color: #f3c4d7;
+            color: #c96f94;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .section-padding {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: #79aaca;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 8px;
         }
 
-        .program {
-            display: inline-block;
-            background-color: #7db9df;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 18px;
-            font-weight: bold;
+        .section-heading h2 {
+            color: #40556f;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .section-heading h2 span {
+            color: #8fc8e8;
             transition: 0.3s ease;
         }
 
-        .program:hover {
-            background-color: #e9a8d0;
+        .section-heading h2 span:hover {
+            color: #e9a2bf;
         }
 
         .about-box {
             background-color: white;
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
-            height: 100%;
-            transition: 0.3s ease;
-        }
-
-        .about-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(100, 120, 170, 0.18);
-        }
-
-        .about-title {
-            display: inline-block;
-            background-color: #91cbed;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 18px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 18px;
-            transition: 0.3s ease;
-        }
-
-        .about-title:hover {
-            background-color: #f3a9c8;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.08);
+            border: 1px solid #edf4f8;
         }
 
         .about-box p {
-            line-height: 1.8;
+            line-height: 1.85;
+            color: #62758a;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
             margin-bottom: 0;
         }
 
-
-        /* GENERAL SECTIONS */
-
-        .section-padding {
-            padding: 55px 0;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .section-heading h2 {
-            display: inline-block;
-            background-color: #91cbed;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 20px;
-            font-weight: bold;
+        .about-highlight {
+            background-color: #eef9fe;
+            border-left: 4px solid #91cbed;
+            padding: 18px 20px;
+            border-radius: 12px;
+            color: #58728a;
+            line-height: 1.7;
             transition: 0.3s ease;
         }
 
-        .section-heading h2:hover {
-            background-color: #f3a9c8;
+        .about-highlight:hover {
+            background-color: #fbe5ee;
+            border-left-color: #e9a2bf;
         }
 
 
-        /* SKILLS */
+        /* =========================
+           SKILLS
+        ========================= */
+
+        #skills {
+            background-color: #f2f8fc;
+        }
 
         .skills-box {
             background-color: white;
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
-            text-align: center;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.07);
+            border: 1px solid #eaf2f7;
+        }
+
+        .skill-group {
+            margin-bottom: 25px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group h3 {
+            color: #536b84;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .skill-badge {
             display: inline-block;
-            background-color: #91cbed;
-            color: white;
-            padding: 10px 18px;
-            margin: 7px;
-            border-radius: 18px;
-            font-weight: bold;
+            background-color: #e7f5fc;
+            color: #5f8eae;
+            padding: 9px 16px;
+            margin: 4px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 0.92rem;
             transition: 0.3s ease;
         }
 
         .skill-badge:hover {
-            background-color: #f3a9c8;
-            color: white;
-            transform: translateY(-3px);
+            background-color: #f3c4d7;
+            color: #c96f94;
+            transform: translateY(-2px);
         }
 
 
-        /* PROJECTS */
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .project-wrapper {
             text-align: center;
-            padding-top: 10px;
         }
 
         .project-image {
-            width: 170px !important;
-            height: 170px !important;
+            width: 165px !important;
+            height: 165px !important;
             object-fit: cover;
             border-radius: 50% !important;
             display: block;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 22px;
             border: 6px solid white;
-            box-shadow: 0 8px 20px rgba(80, 150, 190, 0.25);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(84, 139, 175, 0.18);
+            transition: 0.3s ease;
         }
 
         .project-image:hover {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .project-card {
-            border: none;
-            border-radius: 30px;
+            height: 100%;
+            border: 1px solid #eaf1f5;
+            border-radius: 24px;
             background-color: white;
-            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
+            box-shadow: 0 8px 25px rgba(80, 110, 140, 0.07);
             transition: 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(100, 120, 170, 0.2);
+            transform: translateY(-7px);
+            box-shadow: 0 15px 32px rgba(80, 110, 140, 0.13);
         }
 
         .project-card h3 {
-            color: #6b7fa3;
-            font-weight: bold;
+            color: #40556f;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .project-card p {
-            line-height: 1.7;
+            color: #687a8e;
+            line-height: 1.75;
         }
 
-        /* VISIT PROJECT BUTTON */
+        .tools {
+            display: inline-block;
+            background-color: #f0edfc;
+            color: #8176a6;
+            padding: 6px 11px;
+            border-radius: 11px;
+            font-size: 0.82rem;
+            margin: 3px;
+        }
 
         .project-title {
             display: inline-block;
-            background-color: #91cbed;
+            background-color: #8fc8e8;
             color: white;
-            padding: 9px 18px;
-            border-radius: 16px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 18px;
+            padding: 10px 20px;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            font-weight: 700;
             border: none;
             cursor: pointer;
             transition: 0.3s ease;
         }
 
         .project-title:hover {
-            background-color: #f3a9c8;
+            background-color: #e9a2bf;
             color: white;
-            transform: scale(1.03);
-        }
-
-        .tools {
-            display: inline-block;
-            background-color: #eee9ff;
-            color: #766a9e;
-            padding: 7px 13px;
-            border-radius: 14px;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            transform: translateY(-2px);
         }
 
 
-        /* CONTACT */
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background-color: #f2f8fc;
+        }
 
         .contact-box {
             background-color: white;
-            padding: 35px;
-            border-radius: 30px;
-            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.08);
+            border: 1px solid #eaf2f7;
+        }
+
+        .contact-box h3 {
+            color: #40556f;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .contact-box p {
+            color: #687a8e;
+            line-height: 1.8;
+        }
+
+        .form-label {
+            color: #536b84;
+            font-weight: 600;
         }
 
         .form-control {
-            border: 2px solid #d9e8f5;
-            border-radius: 15px;
-            padding: 12px;
+            border: 1px solid #d9e8f1;
+            border-radius: 13px;
+            padding: 12px 14px;
         }
 
         .form-control:focus {
             border-color: #91cbed;
-            box-shadow: 0 0 0 0.2rem rgba(145, 203, 237, 0.2);
+            box-shadow: 0 0 0 0.2rem rgba(145, 203, 237, 0.15);
         }
 
         .btn-contact {
-            background-color: #91cbed;
+            background-color: #8fc8e8;
             color: white;
             border: none;
-            padding: 11px 25px;
-            border-radius: 17px;
-            font-weight: bold;
+            padding: 11px 23px;
+            border-radius: 15px;
+            font-weight: 700;
             transition: 0.3s ease;
         }
 
         .btn-contact:hover {
-            background-color: #f3a9c8;
+            background-color: #e9a2bf;
             color: white;
             transform: translateY(-2px);
         }
@@ -341,50 +501,59 @@
         .social-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #91cbed;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 17px;
-            font-weight: bold;
-            margin: 5px;
+            background-color: #e7f5fc;
+            color: #5f8eae;
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-weight: 700;
+            margin: 4px;
             transition: 0.3s ease;
         }
 
         .social-btn:hover {
-            background-color: #f3a9c8;
-            color: white;
+            background-color: #f3c4d7;
+            color: #c96f94;
             transform: translateY(-2px);
         }
 
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background-color: #91cbed;
-            color: white;
+            background-color: #40556f;
+            color: #e9f4fa;
             text-align: center;
-            padding: 25px 15px;
-            margin-top: 30px;
+            padding: 28px 15px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
         }
 
         footer a {
-            color: white;
+            color: #bfe5f7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: 0.3s ease;
         }
 
         footer a:hover {
-            color: #f3a9c8;
+            color: #f3b5cd;
         }
 
 
-        /* SCROLL REVEAL */
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
 
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
         }
 
         .reveal.show {
@@ -393,40 +562,58 @@
         }
 
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 768px) {
 
             #home {
-                padding-top: 90px;
-                padding-bottom: 35px;
+                padding: 105px 0 65px;
             }
 
             .section-padding {
-                padding: 45px 0;
+                padding: 65px 0;
+            }
+
+            .profile-image {
+                width: 155px;
+                height: 155px;
+            }
+
+            .hero-title {
+                font-size: 2.35rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.05rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
             }
 
             .section-heading {
                 margin-bottom: 30px;
             }
 
-            .about-box {
-                margin-top: 15px;
+            .section-heading h2 {
+                font-size: 1.9rem;
+            }
+
+            .about-box,
+            .skills-box,
+            .contact-box {
                 padding: 25px;
             }
 
-            .name-box h1 {
-                font-size: 2rem;
-            }
-
-            .profile-image {
-                width: 160px;
-                height: 160px;
-            }
-
             .project-image {
-                width: 150px !important;
-                height: 150px !important;
+                width: 145px !important;
+                height: 145px !important;
+            }
+
+            .cloud-decoration {
+                display: none;
             }
         }
     </style>
@@ -435,137 +622,228 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================= -->
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <header>
 
-        <div class="container">
-
-            <a class="navbar-brand" href="#home">
-                ☁️ Kazuyoshi Ferrer
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">
-                            About Me
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">
-                            Skills
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            Projects
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <!-- MAIN CONTENT -->
-
-    <main>
-
-        <!-- HOME -->
-
-        <section id="home">
+        <nav class="navbar navbar-expand-lg fixed-top">
 
             <div class="container">
 
-                <!-- Profile Picture -->
+                <a class="navbar-brand" href="#home">
+                    ☁️ Kazuyoshi Ferrer
+                </a>
 
-                <img
-                    src="images/profile.jpg"
-                    alt="Profile picture of Kazuyoshi Joseph Ferrer"
-                    class="profile-image reveal"
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
                 >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
 
-                <div class="row g-4 align-items-stretch">
+                <div class="collapse navbar-collapse" id="navbarNav">
 
-                    <!-- NAME -->
+                    <ul class="navbar-nav ms-auto">
 
-                    <div class="col-12 col-md-6 reveal">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">
+                                Home
+                            </a>
+                        </li>
 
-                        <div class="name-box h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                About Me
+                            </a>
+                        </li>
 
-                            <h1>
-                                Kazuyoshi Joseph Ferrer
-                            </h1>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">
+                                Skills
+                            </a>
+                        </li>
 
-                            <div class="program">
-                                Bachelor of Science in Information Systems
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">
+                                Projects
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+
+        <!-- =========================
+             HOME
+        ========================= -->
+
+        <section id="home">
+
+            <div class="cloud-decoration cloud-one">
+                ☁️
+            </div>
+
+            <div class="cloud-decoration cloud-two">
+                ☁️
+            </div>
+
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <img
+                        src="images/profile.jpg"
+                        alt="Profile picture of Kazuyoshi Joseph Ferrer"
+                        class="profile-image reveal"
+                    >
+
+
+                    <div class="row align-items-center g-5">
+
+                        <div class="col-12 col-md-8 reveal">
+
+                            <div class="hero-intro">
+
+                                <div class="hero-label">
+                                    Information Systems Student
+                                </div>
+
+                                <h1 class="hero-title">
+                                    Hi, I'm
+                                    <span>Kazuyoshi Joseph Ferrer.</span>
+                                </h1>
+
+                                <p class="hero-subtitle">
+                                    Bachelor of Science in Information Systems
+                                </p>
+
+                                <p class="hero-description">
+                                    I am an Information Systems student
+                                    interested in technology, business
+                                    processes, and creating practical digital
+                                    solutions that make everyday tasks easier
+                                    and more organized.
+                                </p>
+
+
+                                <a
+                                    href="#projects"
+                                    class="primary-button"
+                                >
+                                    View My Projects
+                                </a>
+
+                                <a
+                                    href="#contact"
+                                    class="secondary-button"
+                                >
+                                    Contact Me
+                                </a>
+
                             </div>
 
-                            <p class="mt-3 mb-0">
-                                Information Systems Student
-                            </p>
+                        </div>
+
+
+                        <div class="col-12 col-md-4 reveal">
+
+                            <div class="about-highlight">
+
+                                <strong>Currently learning</strong>
+
+                                <br><br>
+
+                                Programming, databases, web development,
+                                business processes, and information systems.
+
+                            </div>
 
                         </div>
 
                     </div>
 
+                </div>
 
-                    <!-- ABOUT ME -->
+            </div>
 
-                    <div class="col-12 col-md-6 reveal">
+        </section>
 
-                        <div class="about-box">
 
-                            <div class="about-title">
-                                About Me
-                            </div>
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about" class="section-padding">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        About
+                    </div>
+
+                    <h2>
+                        A little about <span>me</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="about-box reveal">
+
+                    <div class="row g-4">
+
+                        <div class="col-12 col-md-6">
 
                             <p>
-                                I am a Bachelor of Science in Information Systems
-                                student at De La Salle-College of Saint Benilde –
-                                Antipolo. I am interested in technology, business
-                                processes, and creating systems that can help make
-                                tasks easier and more organized.
+                                I am a Bachelor of Science in Information
+                                Systems student at De La Salle-College of
+                                Saint Benilde – Antipolo. I am interested in
+                                technology, business processes, and creating
+                                systems that can help make tasks easier and
+                                more organized.
                             </p>
 
-                            <p class="mt-3">
-                                I enjoy learning new skills and working on school
-                                projects that allow me to improve my knowledge in
-                                programming, databases, and information systems.
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+
+                            <p>
+                                I enjoy learning new skills and working on
+                                school projects that allow me to improve my
+                                knowledge in programming, databases, research,
+                                and information systems.
                             </p>
 
                         </div>
@@ -579,7 +857,9 @@
         </section>
 
 
-        <!-- SKILLS -->
+        <!-- =========================
+             SKILLS
+        ========================= -->
 
         <section id="skills" class="section-padding">
 
@@ -587,8 +867,12 @@
 
                 <div class="section-heading reveal">
 
-                    <h2>
+                    <div class="section-label">
                         Skills
+                    </div>
+
+                    <h2>
+                        What I <span>work with</span>
                     </h2>
 
                 </div>
@@ -596,37 +880,54 @@
 
                 <div class="skills-box reveal">
 
-                    <span class="skill-badge">
-                        C#
-                    </span>
+                    <div class="skill-group">
 
-                    <span class="skill-badge">
-                        HTML
-                    </span>
+                        <h3>
+                            Technical Skills
+                        </h3>
 
-                    <span class="skill-badge">
-                        CSS
-                    </span>
+                        <span class="skill-badge">
+                            C#
+                        </span>
 
-                    <span class="skill-badge">
-                        Bootstrap
-                    </span>
+                        <span class="skill-badge">
+                            HTML
+                        </span>
 
-                    <span class="skill-badge">
-                        SQL
-                    </span>
+                        <span class="skill-badge">
+                            CSS
+                        </span>
 
-                    <span class="skill-badge">
-                        Database Management
-                    </span>
+                        <span class="skill-badge">
+                            Bootstrap
+                        </span>
 
-                    <span class="skill-badge">
-                        Research
-                    </span>
+                        <span class="skill-badge">
+                            SQL
+                        </span>
 
-                    <span class="skill-badge">
-                        Problem Solving
-                    </span>
+                        <span class="skill-badge">
+                            Database Management
+                        </span>
+
+                    </div>
+
+
+                    <div class="skill-group">
+
+                        <h3>
+                            Other Skills
+                        </h3>
+
+                        <span class="skill-badge">
+                            Research
+                        </span>
+
+                        <span class="skill-badge">
+                            Problem Solving
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -635,7 +936,9 @@
         </section>
 
 
-        <!-- PROJECTS -->
+        <!-- =========================
+             PROJECTS
+        ========================= -->
 
         <section id="projects" class="section-padding">
 
@@ -643,14 +946,19 @@
 
                 <div class="section-heading reveal">
 
-                    <h2>
+                    <div class="section-label">
                         Projects
+                    </div>
+
+                    <h2>
+                        Selected <span>work</span>
                     </h2>
 
                 </div>
 
 
                 <div class="row g-5">
+
 
                     <!-- PROJECT 1 -->
 
@@ -674,32 +982,33 @@
                                     </h3>
 
                                     <p>
-                                        A school project that involved creating
-                                        a payroll system for a cake shop. The
-                                        system was developed using NetBeans and
-                                        SQL to manage employee payroll
-                                        information and apply database concepts.
+                                        A school project that involved
+                                        creating a payroll system for a cake
+                                        shop. The system was developed using
+                                        NetBeans and SQL to manage employee
+                                        payroll information and apply database
+                                        concepts.
                                     </p>
 
 
-                                    <span class="tools">
-                                        NetBeans
-                                    </span>
+                                    <div class="mb-3">
 
-                                    <span class="tools">
-                                        SQL
-                                    </span>
+                                        <span class="tools">
+                                            NetBeans
+                                        </span>
 
-                                    <br><br>
+                                        <span class="tools">
+                                            SQL
+                                        </span>
 
+                                    </div>
 
-                                    <!-- Button with no link yet -->
 
                                     <button
                                         type="button"
                                         class="project-title"
                                     >
-                                        Visit Project
+                                        Visit Project →
                                     </button>
 
                                 </div>
@@ -741,28 +1050,28 @@
                                     </p>
 
 
-                                    <span class="tools">
-                                        Research
-                                    </span>
+                                    <div class="mb-3">
 
-                                    <span class="tools">
-                                        Google Scholar
-                                    </span>
+                                        <span class="tools">
+                                            Research
+                                        </span>
 
-                                    <span class="tools">
-                                        Mendeley
-                                    </span>
+                                        <span class="tools">
+                                            Google Scholar
+                                        </span>
 
-                                    <br><br>
+                                        <span class="tools">
+                                            Mendeley
+                                        </span>
 
+                                    </div>
 
-                                    <!-- Button with no link yet -->
 
                                     <button
                                         type="button"
                                         class="project-title"
                                     >
-                                        Visit Project
+                                        Visit Project →
                                     </button>
 
                                 </div>
@@ -780,7 +1089,9 @@
         </section>
 
 
-        <!-- CONTACT -->
+        <!-- =========================
+             CONTACT
+        ========================= -->
 
         <section id="contact" class="section-padding">
 
@@ -788,8 +1099,12 @@
 
                 <div class="section-heading reveal">
 
+                    <div class="section-label">
+                        Contact
+                    </div>
+
                     <h2>
-                        Contact Me
+                        Let's <span>connect</span>
                     </h2>
 
                 </div>
@@ -797,7 +1112,8 @@
 
                 <div class="contact-box reveal">
 
-                    <div class="row g-4">
+                    <div class="row g-5">
+
 
                         <!-- CONTACT FORM -->
 
@@ -894,12 +1210,12 @@
                         <div class="col-12 col-md-5">
 
                             <h3 class="mb-4">
-                                Connect with me
+                                Find me online
                             </h3>
 
                             <p>
-                                You can also find me through my GitHub and
-                                LinkedIn profiles.
+                                You can also connect with me through my
+                                GitHub and LinkedIn profiles.
                             </p>
 
 
@@ -939,12 +1255,14 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
-        <p class="mb-2">
-            © 2026 Kazuyoshi Joseph Ferrer. All rights reserved.
+        <p>
+            © 2026 Kazuyoshi Joseph Ferrer
         </p>
 
         <p class="mb-0">
@@ -957,7 +1275,7 @@
                 GitHub
             </a>
 
-            &nbsp; | &nbsp;
+            &nbsp; · &nbsp;
 
             <a
                 href="https://www.linkedin.com/in/kazuyoshi-joseph-ferrer-849899435/"
