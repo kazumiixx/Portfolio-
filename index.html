@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kazuyoshi Ferrer | Portfolio</title>
+    <title>Kazuyoshi Joseph Ferrer | Portfolio</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
+    <!-- Custom CSS -->
     <style>
-
-        /* =========================
-           GENERAL
-        ========================== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(
+                135deg,
+                #dff5ff,
+                #e8e0ff,
+                #f8e8ff
+            );
+            color: #4d5f78;
+        }
 
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(
-                180deg,
-                #dff5ff 0%,
-                #eef8ff 45%,
-                #f7efff 100%
-            );
-            color: #425466;
-        }
-
-        section {
-            scroll-margin-top: 80px;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================== */
+        /* NAVBAR */
 
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 15px rgba(80, 130, 170, 0.12);
+            background-color: #91cbed !important;
+            box-shadow: 0 4px 15px rgba(80, 150, 190, 0.2);
         }
 
         .navbar-brand {
+            color: white !important;
             font-weight: bold;
-            color: #4d8fc1 !important;
+            font-size: 1.2rem;
+            transition: 0.3s ease;
         }
 
         .navbar-brand:hover {
-            color: #3579a8 !important;
+            color: #f3a9c8 !important;
         }
 
         .nav-link {
-            color: #5c7190 !important;
+            color: white !important;
             font-weight: 600;
-            margin: 0 5px;
-            border-radius: 20px;
-            padding: 8px 15px !important;
+            border-radius: 15px;
+            padding: 8px 14px !important;
+            margin: 0 3px;
             transition: 0.3s ease;
         }
 
         .nav-link:hover {
-            background-color: #d8efff;
-            color: #4385b8 !important;
+            background-color: #f9d4e3;
+            color: #d66f9b !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
 
 
-        /* =========================
-           HOME
-        ========================== */
+        /* HOME */
 
         #home {
             min-height: auto;
@@ -89,7 +85,9 @@
             object-fit: cover;
             border-radius: 50%;
             border: 7px solid white;
-            box-shadow: 0 10px 25px rgba(70, 130, 170, 0.2);
+            box-shadow: 0 8px 25px rgba(80, 150, 190, 0.25);
+            display: block;
+            margin: 0 auto 35px auto;
             transition: 0.3s ease;
         }
 
@@ -98,56 +96,76 @@
         }
 
         .name-box {
-            display: inline-block;
-            background-color: #8dc9ee;
+            background-color: #91cbed;
             color: white;
-            padding: 12px 25px;
-            border-radius: 20px;
-            margin-top: 25px;
-            box-shadow: 0 5px 15px rgba(80, 150, 190, 0.15);
+            padding: 25px;
+            border-radius: 30px;
+            box-shadow: 0 7px 20px rgba(80, 150, 190, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .name-box:hover {
+            background-color: #f3a9c8;
+            transform: translateY(-5px);
         }
 
         .name-box h1 {
-            font-size: 2rem;
-            margin: 0;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
         .program {
             display: inline-block;
-            margin-top: 10px;
-            background-color: #c8b9f2;
+            background-color: #7db9df;
             color: white;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 18px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .program:hover {
+            background-color: #e9a8d0;
         }
 
         .about-box {
             background-color: white;
-            padding: 35px;
+            padding: 30px;
             border-radius: 30px;
-            box-shadow: 0 8px 25px rgba(100, 120, 170, 0.12);
+            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
+            height: 100%;
+            transition: 0.3s ease;
         }
 
-        .section-title {
+        .about-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(100, 120, 170, 0.18);
+        }
+
+        .about-title {
             display: inline-block;
-            background-color: #75b8df;
+            background-color: #91cbed;
             color: white;
-            padding: 10px 22px;
+            padding: 10px 20px;
             border-radius: 18px;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            transition: 0.3s ease;
+        }
+
+        .about-title:hover {
+            background-color: #f3a9c8;
         }
 
         .about-box p {
             line-height: 1.8;
+            margin-bottom: 0;
         }
 
 
-        /* =========================
-           SECTIONS
-        ========================== */
+        /* GENERAL SECTIONS */
 
         .section-padding {
             padding: 55px 0;
@@ -160,52 +178,48 @@
 
         .section-heading h2 {
             display: inline-block;
-            background-color: #7bbce2;
+            background-color: #91cbed;
             color: white;
-            padding: 12px 30px;
-            border-radius: 22px;
+            padding: 12px 28px;
+            border-radius: 20px;
             font-weight: bold;
+            transition: 0.3s ease;
         }
 
-        .section-heading p {
-            margin-top: 15px;
-            color: #718198;
+        .section-heading h2:hover {
+            background-color: #f3a9c8;
         }
 
 
-        /* =========================
-           SKILLS
-        ========================== */
+        /* SKILLS */
 
         .skills-box {
             background-color: white;
+            padding: 30px;
             border-radius: 30px;
-            padding: 35px;
-            box-shadow: 0 8px 25px rgba(100, 120, 170, 0.12);
+            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
             text-align: center;
         }
 
         .skill-badge {
             display: inline-block;
-            background-color: #a9d9f5;
-            color: #356b91;
+            background-color: #91cbed;
+            color: white;
             padding: 10px 18px;
-            border-radius: 30px;
-            margin: 6px;
-            font-weight: 600;
+            margin: 7px;
+            border-radius: 18px;
+            font-weight: bold;
             transition: 0.3s ease;
         }
 
         .skill-badge:hover {
-            transform: translateY(-4px);
-            background-color: #8bc8ed;
+            background-color: #f3a9c8;
             color: white;
+            transform: translateY(-3px);
         }
 
 
-        /* =========================
-           PROJECTS
-        ========================== */
+        /* PROJECTS */
 
         .project-wrapper {
             text-align: center;
@@ -241,6 +255,15 @@
             box-shadow: 0 15px 30px rgba(100, 120, 170, 0.2);
         }
 
+        .project-card h3 {
+            color: #6b7fa3;
+            font-weight: bold;
+        }
+
+        .project-card p {
+            line-height: 1.7;
+        }
+
         .project-title {
             display: inline-block;
             text-decoration: none;
@@ -251,140 +274,111 @@
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 18px;
+            border: none;
+            cursor: default;
             transition: 0.3s ease;
         }
 
         .project-title:hover {
-            background-color: #6eb4df;
+            background-color: #f3a9c8;
             color: white;
             transform: scale(1.03);
         }
 
-        .project-card p {
-            line-height: 1.7;
-            color: #68788d;
-        }
-
-        .project-badge {
+        .tools {
             display: inline-block;
-            background-color: #d8c9f5;
-            color: #66558d;
+            background-color: #eee9ff;
+            color: #766a9e;
             padding: 7px 13px;
-            border-radius: 20px;
-            margin: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
 
 
-        /* =========================
-           CONTACT
-        ========================== */
+        /* CONTACT */
 
         .contact-box {
             background-color: white;
+            padding: 35px;
             border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 8px 25px rgba(100, 120, 170, 0.12);
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: #58708b;
+            box-shadow: 0 7px 22px rgba(100, 120, 170, 0.12);
         }
 
         .form-control {
-            border: 2px solid #d8ecf8;
+            border: 2px solid #d9e8f5;
             border-radius: 15px;
-            padding: 12px 15px;
+            padding: 12px;
         }
 
         .form-control:focus {
-            border-color: #8bc8ed;
-            box-shadow: 0 0 0 0.2rem rgba(139, 200, 237, 0.2);
+            border-color: #91cbed;
+            box-shadow: 0 0 0 0.2rem rgba(145, 203, 237, 0.2);
         }
 
-        .send-button {
-            background-color: #79bce2;
+        .btn-contact {
+            background-color: #91cbed;
             color: white;
             border: none;
-            border-radius: 20px;
-            padding: 12px 28px;
+            padding: 11px 25px;
+            border-radius: 17px;
             font-weight: bold;
             transition: 0.3s ease;
         }
 
-        .send-button:hover {
-            background-color: #579fce;
+        .btn-contact:hover {
+            background-color: #f3a9c8;
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
-        .github-button,
-        .linkedin-button {
+        .social-btn {
             display: inline-block;
-            color: white;
             text-decoration: none;
+            background-color: #91cbed;
+            color: white;
             padding: 10px 20px;
-            border-radius: 20px;
+            border-radius: 17px;
             font-weight: bold;
             margin: 5px;
             transition: 0.3s ease;
         }
 
-        .github-button {
-            background-color: #c5b4ef;
-        }
-
-        .github-button:hover {
-            background-color: #a996dc;
+        .social-btn:hover {
+            background-color: #f3a9c8;
             color: white;
-            transform: translateY(-3px);
-        }
-
-        .linkedin-button {
-            background-color: #75b8df;
-        }
-
-        .linkedin-button:hover {
-            background-color: #579fce;
-            color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         footer {
-            background-color: #75b5d9;
+            background-color: #91cbed;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 25px 15px;
             margin-top: 30px;
         }
 
-        .footer-link {
+        footer a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            margin: 0 8px;
+            transition: 0.3s ease;
         }
 
-        .footer-link:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: #f3a9c8;
         }
 
 
-        /* =========================
-           ANIMATION
-        ========================== */
+        /* SCROLL REVEAL */
 
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: 0.7s ease;
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .reveal.show {
@@ -393,9 +387,7 @@
         }
 
 
-        /* =========================
-           MOBILE
-        ========================== */
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
@@ -412,178 +404,138 @@
                 margin-bottom: 30px;
             }
 
-            .name-box h1 {
-                font-size: 1.5rem;
-            }
-
             .about-box {
                 margin-top: 15px;
                 padding: 25px;
+            }
+
+            .name-box h1 {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 160px;
+                height: 160px;
             }
 
             .project-image {
                 width: 150px !important;
                 height: 150px !important;
             }
-
-            .contact-box {
-                padding: 25px;
-            }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
-    <!-- =========================
-         HEADER + NAVBAR
-    ========================== -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
 
-    <header>
+            <a class="navbar-brand" href="#home">
+                ☁️ Kazuyoshi Ferrer
+            </a>
 
-        <nav class="navbar navbar-expand-lg fixed-top">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                <a class="navbar-brand" href="#home">
-                    ☁️ Kazuyoshi Ferrer
-                </a>
+                <ul class="navbar-nav ms-auto">
 
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">About Me</a>
+                    </li>
 
-                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">
-                                Home
-                            </a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">
-                                About Me
-                            </a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">
-                                Skills
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">
-                                Projects
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
+                </ul>
 
             </div>
-
-        </nav>
-
-    </header>
+        </div>
+    </nav>
 
 
-    <!-- =========================
-         MAIN
-    ========================== -->
-
+    <!-- HOME -->
     <main>
-
-
-        <!-- =========================
-             HOME
-        ========================== -->
 
         <section id="home">
 
             <div class="container">
 
-                <!-- PROFILE PICTURE - UPPER CENTER -->
+                <!-- Profile Picture -->
+                <img
+                    src="images/profile.jpg"
+                    alt="Profile picture of Kazuyoshi Joseph Ferrer"
+                    class="profile-image reveal"
+                >
 
-                <div class="text-center mb-4">
+                <div class="row g-4 align-items-stretch">
 
-                    <img
-                        src="images/profile.jpg"
-                        alt="Profile photo of Kazuyoshi Ferrer"
-                        class="profile-image"
-                    >
+                    <!-- Name -->
+                    <div class="col-12 col-md-6 reveal">
 
-                </div>
+                        <div class="name-box h-100">
 
-
-                <!-- NAME LEFT + ABOUT ME RIGHT -->
-
-                <div class="row align-items-center g-4">
-
-                    <!-- NAME AND PROGRAM - LOWER LEFT -->
-
-                    <div class="col-12 col-md-5 reveal">
-
-                        <div class="text-center text-md-start">
-
-                            <div class="name-box">
-                                <h1>Kazuyoshi Joseph Ferrer</h1>
-                            </div>
-
-                            <br>
+                            <h1>Kazuyoshi Joseph Ferrer</h1>
 
                             <div class="program">
                                 Bachelor of Science in Information Systems
                             </div>
 
+                            <p class="mt-3 mb-0">
+                                Information Systems Student
+                            </p>
+
                         </div>
 
                     </div>
 
 
-                    <!-- ABOUT ME - LOWER RIGHT -->
-
-                    <div class="col-12 col-md-7 reveal">
+                    <!-- About Me -->
+                    <div class="col-12 col-md-6 reveal">
 
                         <div class="about-box">
 
-                            <div class="section-title">
+                            <div class="about-title">
                                 About Me
                             </div>
 
                             <p>
-                                I am an Information Systems student at
-                                De La Salle-College of Saint Benilde –
-                                Antipolo. I am interested in technology,
-                                business processes, and creating useful
-                                systems.
+                                I am a Bachelor of Science in Information Systems
+                                student at De La Salle-College of Saint Benilde –
+                                Antipolo. I am interested in technology, business
+                                processes, and creating systems that can help make
+                                tasks easier and more organized.
                             </p>
 
-                            <p>
-                                I enjoy learning new skills and working
-                                on projects that allow me to combine
-                                creativity and technology.
+                            <p class="mt-3">
+                                I enjoy learning new skills and working on school
+                                projects that allow me to improve my knowledge in
+                                programming, databases, and information systems.
                             </p>
 
                         </div>
@@ -597,66 +549,25 @@
         </section>
 
 
-        <!-- =========================
-             SKILLS
-        ========================== -->
-
+        <!-- SKILLS -->
         <section id="skills" class="section-padding">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
                     <h2>Skills</h2>
-
-                    <p>
-                        Some of the skills and tools I have worked with.
-                    </p>
-
                 </div>
-
 
                 <div class="skills-box reveal">
 
-                    <span class="skill-badge">
-                        HTML
-                    </span>
-
-                    <span class="skill-badge">
-                        CSS
-                    </span>
-
-                    <span class="skill-badge">
-                        C#
-                    </span>
-
-                    <span class="skill-badge">
-                        SQL
-                    </span>
-
-                    <span class="skill-badge">
-                        Bootstrap
-                    </span>
-
-                    <span class="skill-badge">
-                        GitHub
-                    </span>
-
-                    <span class="skill-badge">
-                        NetBeans
-                    </span>
-
-                    <span class="skill-badge">
-                        Microsoft Office
-                    </span>
-
-                    <span class="skill-badge">
-                        Research
-                    </span>
-
-                    <span class="skill-badge">
-                        Problem Solving
-                    </span>
+                    <span class="skill-badge">C#</span>
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">Database Management</span>
+                    <span class="skill-badge">Research</span>
+                    <span class="skill-badge">Problem Solving</span>
 
                 </div>
 
@@ -665,75 +576,60 @@
         </section>
 
 
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
+        <!-- PROJECTS -->
         <section id="projects" class="section-padding">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
                     <h2>Projects</h2>
-
-                    <p>
-                        Some of the projects I have worked on as a student.
-                    </p>
-
                 </div>
 
+                <div class="row g-5">
 
-                <div class="row g-4">
-
-
-                    <!-- PROJECT 1 -->
-
+                    <!-- Project 1 -->
                     <div class="col-12 col-md-6 reveal">
 
                         <div class="project-wrapper">
 
                             <img
                                 src="images/cinnamoroll-cake-shop.jpg"
-                                alt="Cinnamoroll Cake Shop Payroll System"
+                                alt="Cinnamoroll Cake Shop Payroll System project"
                                 class="project-image"
                             >
 
-                            <div class="card project-card h-100">
+                            <div class="card project-card">
 
                                 <div class="card-body p-4">
 
-                                    <a
-                                        href="#contact"
-                                        class="project-title"
-                                    >
+                                    <h3>
                                         Cinnamoroll Cake Shop Payroll System
-                                    </a>
+                                    </h3>
 
                                     <p>
-                                        A school project that involved
-                                        creating a payroll system for a
-                                        cake shop. The system was developed
-                                        using NetBeans and SQL to manage
-                                        employee payroll information and
-                                        apply database concepts.
+                                        A school project that involved creating
+                                        a payroll system for a cake shop. The
+                                        system was developed using NetBeans and
+                                        SQL to manage employee payroll
+                                        information and apply database concepts.
                                     </p>
 
-                                    <div>
+                                    <span class="tools">
+                                        NetBeans
+                                    </span>
 
-                                        <span class="project-badge">
-                                            NetBeans
-                                        </span>
+                                    <span class="tools">
+                                        SQL
+                                    </span>
 
-                                        <span class="project-badge">
-                                            SQL
-                                        </span>
+                                    <br><br>
 
-                                        <span class="project-badge">
-                                            Database
-                                        </span>
-
-                                    </div>
+                                    <button
+                                        type="button"
+                                        class="project-title"
+                                    >
+                                        View Project
+                                    </button>
 
                                 </div>
 
@@ -744,8 +640,7 @@
                     </div>
 
 
-                    <!-- PROJECT 2 -->
-
+                    <!-- Project 2 -->
                     <div class="col-12 col-md-6 reveal">
 
                         <div class="project-wrapper">
@@ -756,41 +651,42 @@
                                 class="project-image"
                             >
 
-                            <div class="card project-card h-100">
+                            <div class="card project-card">
 
                                 <div class="card-body p-4">
 
-                                    <a
-                                        href="#contact"
-                                        class="project-title"
-                                    >
+                                    <h3>
                                         CRM Research Project
-                                    </a>
+                                    </h3>
 
                                     <p>
-                                        A research project that explored
-                                        how Customer Relationship Management
-                                        (CRM) systems can help hospitality
-                                        businesses manage guest information,
-                                        preferences, and customer
-                                        relationships.
+                                        A research project that explored how
+                                        Customer Relationship Management (CRM)
+                                        systems can help hospitality businesses
+                                        manage guest information, preferences,
+                                        and customer relationships.
                                     </p>
 
-                                    <div>
+                                    <span class="tools">
+                                        Research
+                                    </span>
 
-                                        <span class="project-badge">
-                                            Research
-                                        </span>
+                                    <span class="tools">
+                                        Google Scholar
+                                    </span>
 
-                                        <span class="project-badge">
-                                            Google Scholar
-                                        </span>
+                                    <span class="tools">
+                                        Mendeley
+                                    </span>
 
-                                        <span class="project-badge">
-                                            Mendeley
-                                        </span>
+                                    <br><br>
 
-                                    </div>
+                                    <button
+                                        type="button"
+                                        class="project-title"
+                                    >
+                                        View Project
+                                    </button>
 
                                 </div>
 
@@ -807,30 +703,25 @@
         </section>
 
 
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
+        <!-- CONTACT -->
         <section id="contact" class="section-padding">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
                     <h2>Contact Me</h2>
-
-                    <p>
-                        Feel free to send me a message.
-                    </p>
-
                 </div>
 
+                <div class="contact-box reveal">
 
-                <div class="row justify-content-center">
+                    <div class="row g-4">
 
-                    <div class="col-12 col-md-8 reveal">
+                        <!-- Contact Form -->
+                        <div class="col-12 col-md-7">
 
-                        <div class="contact-box">
+                            <h3 class="mb-4">
+                                Send me a message
+                            </h3>
 
                             <form
                                 action="mailto:kazuyoshijoseph.ferrer@antipolo.benilde.edu.ph"
@@ -838,10 +729,7 @@
                                 enctype="text/plain"
                             >
 
-                                <!-- NAME -->
-
                                 <div class="mb-3">
-
                                     <label
                                         for="name"
                                         class="form-label"
@@ -854,17 +742,13 @@
                                         class="form-control"
                                         id="name"
                                         name="Name"
-                                        placeholder="Enter your name"
+                                        placeholder="Your name"
                                         required
                                     >
-
                                 </div>
 
 
-                                <!-- EMAIL -->
-
                                 <div class="mb-3">
-
                                     <label
                                         for="email"
                                         class="form-label"
@@ -877,40 +761,13 @@
                                         class="form-control"
                                         id="email"
                                         name="Email"
-                                        placeholder="Enter your email"
+                                        placeholder="Your email"
                                         required
                                     >
-
                                 </div>
 
-
-                                <!-- SUBJECT -->
 
                                 <div class="mb-3">
-
-                                    <label
-                                        for="subject"
-                                        class="form-label"
-                                    >
-                                        Subject
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="subject"
-                                        name="Subject"
-                                        placeholder="Enter your subject"
-                                        required
-                                    >
-
-                                </div>
-
-
-                                <!-- MESSAGE -->
-
-                                <div class="mb-4">
-
                                     <label
                                         for="message"
                                         class="form-label"
@@ -922,54 +779,55 @@
                                         class="form-control"
                                         id="message"
                                         name="Message"
-                                        rows="6"
-                                        placeholder="Write your message..."
+                                        rows="5"
+                                        placeholder="Your message"
                                         required
                                     ></textarea>
-
                                 </div>
 
 
-                                <!-- SEND -->
-
-                                <div class="text-center">
-
-                                    <button
-                                        type="submit"
-                                        class="send-button"
-                                    >
-                                        Send Message
-                                    </button>
-
-                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn-contact"
+                                >
+                                    Send Message
+                                </button>
 
                             </form>
 
+                        </div>
 
-                            <!-- SOCIAL LINKS -->
 
-                            <div class="text-center mt-4">
+                        <!-- Social Links -->
+                        <div class="col-12 col-md-5">
 
-                                <p>
-                                    You can also visit my profiles:
-                                </p>
+                            <h3 class="mb-4">
+                                Connect with me
+                            </h3>
+
+                            <p>
+                                You can also find me through my GitHub and
+                                LinkedIn profiles.
+                            </p>
+
+                            <div class="mt-4">
 
                                 <a
                                     href="https://github.com/kazumiixx"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="github-button"
+                                    class="social-btn"
                                 >
-                                    Visit My GitHub
+                                    GitHub
                                 </a>
 
                                 <a
                                     href="https://www.linkedin.com/in/kazuyoshi-joseph-ferrer-849899435/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="linkedin-button"
+                                    class="social-btn"
                                 >
-                                    Visit My LinkedIn
+                                    LinkedIn
                                 </a>
 
                             </div>
@@ -987,78 +845,65 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
 
         <p class="mb-2">
-            © 2026 Kazuyoshi Joseph Ferrer. All Rights Reserved.
+            © 2026 Kazuyoshi Joseph Ferrer. All rights reserved.
         </p>
 
-        <div>
+        <p class="mb-0">
 
             <a
                 href="https://github.com/kazumiixx"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-link"
             >
                 GitHub
             </a>
+
+            &nbsp; | &nbsp;
 
             <a
                 href="https://www.linkedin.com/in/kazuyoshi-joseph-ferrer-849899435/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-link"
             >
                 LinkedIn
             </a>
 
-        </div>
+        </p>
 
     </footer>
 
 
-    <!-- Bootstrap JavaScript -->
-
+    <!-- Bootstrap JS -->
     <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 
-    <!-- Scroll Animation -->
-
+    <!-- Scroll Reveal -->
     <script>
-
-        const reveals = document.querySelectorAll(".reveal");
+        const revealElements = document.querySelectorAll(".reveal");
 
         const observer = new IntersectionObserver(
             (entries) => {
-
                 entries.forEach((entry) => {
-
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
                     }
-
                 });
-
             },
             {
                 threshold: 0.15
             }
         );
 
-
-        reveals.forEach((element) => {
+        revealElements.forEach((element) => {
             observer.observe(element);
         });
-
     </script>
 
 </body>
-
 </html>
