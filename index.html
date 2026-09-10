@@ -13,6 +13,7 @@
     >
 
     <style>
+
         /* =========================
            GENERAL
         ========================= */
@@ -25,11 +26,146 @@
             margin: 0;
             font-family: Arial, sans-serif;
             color: #40556f;
-            background-color: #f7fbff;
+
+            /* Cinnamoroll-inspired sky background */
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(255, 255, 255, 0.9) 0 5%,
+                    transparent 6%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(255, 255, 255, 0.8) 0 6%,
+                    transparent 7%
+                ),
+                linear-gradient(
+                    135deg,
+                    #dff5ff 0%,
+                    #e8f4ff 35%,
+                    #eeeaff 70%,
+                    #f8eafa 100%
+                );
+
+            background-attachment: fixed;
         }
 
         section {
-            scroll-margin-top: 80px;
+            scroll-margin-top: 85px;
+        }
+
+
+        /* =========================
+           CUTE CLOUD BACKGROUND
+        ========================= */
+
+        .sky-decoration {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.72);
+            border-radius: 50px;
+            filter: blur(0.2px);
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: "";
+            position: absolute;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .cloud-one {
+            width: 170px;
+            height: 55px;
+            top: 13%;
+            left: -30px;
+        }
+
+        .cloud-one::before {
+            width: 75px;
+            height: 75px;
+            left: 35px;
+            bottom: 5px;
+        }
+
+        .cloud-one::after {
+            width: 60px;
+            height: 60px;
+            left: 90px;
+            bottom: 3px;
+        }
+
+        .cloud-two {
+            width: 190px;
+            height: 60px;
+            top: 40%;
+            right: -50px;
+        }
+
+        .cloud-two::before {
+            width: 80px;
+            height: 80px;
+            left: 40px;
+            bottom: 5px;
+        }
+
+        .cloud-two::after {
+            width: 65px;
+            height: 65px;
+            left: 105px;
+            bottom: 4px;
+        }
+
+        .cloud-three {
+            width: 150px;
+            height: 50px;
+            top: 72%;
+            left: 4%;
+        }
+
+        .cloud-three::before {
+            width: 65px;
+            height: 65px;
+            left: 25px;
+            bottom: 4px;
+        }
+
+        .cloud-three::after {
+            width: 55px;
+            height: 55px;
+            left: 75px;
+            bottom: 3px;
+        }
+
+        .sparkle {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 22px;
+        }
+
+        .sparkle-one {
+            top: 18%;
+            right: 18%;
+        }
+
+        .sparkle-two {
+            top: 58%;
+            left: 12%;
+            font-size: 16px;
+        }
+
+        .sparkle-three {
+            bottom: 15%;
+            right: 10%;
+            font-size: 18px;
         }
 
 
@@ -38,13 +174,14 @@
         ========================= */
 
         .navbar {
-            background-color: rgba(255, 255, 255, 0.96) !important;
-            box-shadow: 0 3px 18px rgba(76, 108, 140, 0.10);
+            background-color: rgba(255, 255, 255, 0.94) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(76, 108, 140, 0.10);
             padding: 12px 0;
         }
 
         .navbar-brand {
-            color: #6d9fc1 !important;
+            color: #6599bd !important;
             font-weight: 700;
             letter-spacing: 0.3px;
             transition: 0.3s ease;
@@ -78,64 +215,14 @@
 
 
         /* =========================
-           HERO / HOME
+           HOME
         ========================= */
 
         #home {
-            position: relative;
-            overflow: hidden;
-            padding: 125px 0 85px;
-            background:
-                radial-gradient(
-                    circle at 10% 20%,
-                    rgba(210, 237, 250, 0.8),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 90% 15%,
-                    rgba(226, 220, 248, 0.8),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f8fcff,
-                    #f3f1ff
-                );
-        }
-
-        .cloud-decoration {
-            position: absolute;
-            font-size: 4rem;
-            opacity: 0.35;
-            pointer-events: none;
-        }
-
-        .cloud-one {
-            top: 100px;
-            left: 6%;
-        }
-
-        .cloud-two {
-            top: 190px;
-            right: 8%;
-            font-size: 3rem;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 7px solid white;
-            box-shadow: 0 12px 30px rgba(84, 139, 175, 0.18);
-            display: block;
-            margin: 0 auto 35px;
-            transition: 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 16px 35px rgba(84, 139, 175, 0.25);
+            padding: 120px 0 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
         }
 
         .hero-content {
@@ -143,19 +230,35 @@
             margin: auto;
         }
 
-        .hero-intro {
-            padding: 10px 0;
+        .profile-image {
+            width: 185px;
+            height: 185px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+            box-shadow:
+                0 12px 30px rgba(84, 139, 175, 0.18),
+                0 0 0 8px rgba(255, 255, 255, 0.35);
+
+            display: block;
+            margin: 0 auto 40px;
+            transition: 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-5px) scale(1.03);
         }
 
         .hero-label {
             display: inline-block;
-            color: #6c9bbb;
-            background-color: #e6f5fc;
-            padding: 7px 15px;
+            color: #6398bb;
+            background-color: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(145, 203, 237, 0.45);
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             transition: 0.3s ease;
         }
 
@@ -173,7 +276,7 @@
         }
 
         .hero-title span {
-            color: #78add0;
+            color: #72a9cf;
             transition: 0.3s ease;
         }
 
@@ -182,17 +285,44 @@
         }
 
         .hero-subtitle {
-            color: #6c7f94;
+            color: #667c91;
             font-size: 1.2rem;
-            margin-bottom: 18px;
             font-weight: 600;
+            margin-bottom: 18px;
         }
 
         .hero-description {
-            color: #66788c;
+            color: #687b8e;
             line-height: 1.8;
             max-width: 650px;
-            margin-bottom: 25px;
+            margin-bottom: 27px;
+        }
+
+        .hero-side-box {
+            background-color: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            padding: 28px;
+            box-shadow: 0 10px 28px rgba(80, 110, 140, 0.08);
+            backdrop-filter: blur(5px);
+            transition: 0.3s ease;
+        }
+
+        .hero-side-box:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-side-box h3 {
+            color: #587692;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .hero-side-box p {
+            color: #718396;
+            line-height: 1.7;
+            margin-bottom: 0;
         }
 
 
@@ -221,7 +351,7 @@
         .secondary-button {
             display: inline-block;
             text-decoration: none;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.85);
             color: #6797b8;
             border: 2px solid #b8ddef;
             padding: 9px 22px;
@@ -239,29 +369,30 @@
 
 
         /* =========================
-           ABOUT
+           SECTIONS
         ========================= */
 
         .section-padding {
-            padding: 85px 0;
+            padding: 80px 0;
         }
 
         .section-heading {
-            margin-bottom: 45px;
+            margin-bottom: 42px;
+            text-align: center;
         }
 
         .section-label {
             color: #79aaca;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
 
         .section-heading h2 {
             color: #40556f;
-            font-size: 2.2rem;
+            font-size: 2.25rem;
             font-weight: 700;
             margin: 0;
         }
@@ -275,37 +406,38 @@
             color: #e9a2bf;
         }
 
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         .about-box {
-            background-color: white;
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.08);
-            border: 1px solid #edf4f8;
+            background-color: rgba(255, 255, 255, 0.88);
+            border-radius: 25px;
+            padding: 38px;
+            box-shadow: 0 10px 30px rgba(80, 110, 140, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
         }
 
         .about-box p {
             line-height: 1.85;
             color: #62758a;
-            margin-bottom: 15px;
-        }
-
-        .about-box p:last-child {
             margin-bottom: 0;
         }
 
-        .about-highlight {
-            background-color: #eef9fe;
-            border-left: 4px solid #91cbed;
-            padding: 18px 20px;
-            border-radius: 12px;
-            color: #58728a;
-            line-height: 1.7;
+        .about-accent {
+            height: 4px;
+            width: 55px;
+            background-color: #91cbed;
+            border-radius: 10px;
+            margin-bottom: 20px;
             transition: 0.3s ease;
         }
 
-        .about-highlight:hover {
-            background-color: #fbe5ee;
-            border-left-color: #e9a2bf;
+        .about-box:hover .about-accent {
+            background-color: #e9a2bf;
+            width: 75px;
         }
 
 
@@ -314,15 +446,15 @@
         ========================= */
 
         #skills {
-            background-color: #f2f8fc;
+            background-color: rgba(239, 248, 253, 0.58);
         }
 
         .skills-box {
-            background-color: white;
-            border-radius: 24px;
+            background-color: rgba(255, 255, 255, 0.88);
+            border-radius: 25px;
             padding: 35px;
-            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.07);
-            border: 1px solid #eaf2f7;
+            box-shadow: 0 10px 30px rgba(80, 110, 140, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.95);
         }
 
         .skill-group {
@@ -365,11 +497,12 @@
 
         .project-wrapper {
             text-align: center;
+            height: 100%;
         }
 
         .project-image {
-            width: 165px !important;
-            height: 165px !important;
+            width: 170px !important;
+            height: 170px !important;
             object-fit: cover;
             border-radius: 50% !important;
             display: block;
@@ -384,17 +517,17 @@
         }
 
         .project-card {
-            height: 100%;
-            border: 1px solid #eaf1f5;
-            border-radius: 24px;
-            background-color: white;
-            box-shadow: 0 8px 25px rgba(80, 110, 140, 0.07);
+            height: calc(100% - 192px);
+            border: 1px solid rgba(231, 240, 246, 0.9);
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 9px 27px rgba(80, 110, 140, 0.07);
             transition: 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 15px 32px rgba(80, 110, 140, 0.13);
+            box-shadow: 0 16px 35px rgba(80, 110, 140, 0.13);
         }
 
         .project-card h3 {
@@ -444,15 +577,15 @@
         ========================= */
 
         #contact {
-            background-color: #f2f8fc;
+            background-color: rgba(239, 248, 253, 0.58);
         }
 
         .contact-box {
-            background-color: white;
-            border-radius: 24px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 8px 28px rgba(80, 110, 140, 0.08);
-            border: 1px solid #eaf2f7;
+            box-shadow: 0 10px 30px rgba(80, 110, 140, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.95);
         }
 
         .contact-box h3 {
@@ -569,7 +702,8 @@
         @media (max-width: 768px) {
 
             #home {
-                padding: 105px 0 65px;
+                padding: 105px 0 60px;
+                min-height: auto;
             }
 
             .section-padding {
@@ -579,6 +713,7 @@
             .profile-image {
                 width: 155px;
                 height: 155px;
+                margin-bottom: 30px;
             }
 
             .hero-title {
@@ -591,6 +726,10 @@
 
             .hero-description {
                 font-size: 0.95rem;
+            }
+
+            .hero-side-box {
+                margin-top: 5px;
             }
 
             .section-heading {
@@ -612,15 +751,44 @@
                 height: 145px !important;
             }
 
-            .cloud-decoration {
+            .project-card {
+                height: auto;
+            }
+
+            .cloud {
+                opacity: 0.45;
+            }
+
+            .cloud-two {
                 display: none;
             }
+
+            .primary-button,
+            .secondary-button {
+                margin-bottom: 8px;
+            }
         }
+
     </style>
 </head>
 
 
 <body>
+
+    <!-- Cinnamoroll-inspired background decorations -->
+
+    <div class="sky-decoration" aria-hidden="true">
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="cloud cloud-three"></div>
+
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+        <div class="sparkle sparkle-three">✦</div>
+
+    </div>
+
 
     <!-- =========================
          HEADER / NAVBAR
@@ -636,6 +804,7 @@
                     ☁️ Kazuyoshi Ferrer
                 </a>
 
+
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -645,7 +814,9 @@
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
 
 
@@ -707,15 +878,6 @@
 
         <section id="home">
 
-            <div class="cloud-decoration cloud-one">
-                ☁️
-            </div>
-
-            <div class="cloud-decoration cloud-two">
-                ☁️
-            </div>
-
-
             <div class="container">
 
                 <div class="hero-content">
@@ -729,61 +891,68 @@
 
                     <div class="row align-items-center g-5">
 
+
+                        <!-- INTRODUCTION -->
+
                         <div class="col-12 col-md-8 reveal">
 
-                            <div class="hero-intro">
-
-                                <div class="hero-label">
-                                    Information Systems Student
-                                </div>
-
-                                <h1 class="hero-title">
-                                    Hi, I'm
-                                    <span>Kazuyoshi Joseph Ferrer.</span>
-                                </h1>
-
-                                <p class="hero-subtitle">
-                                    Bachelor of Science in Information Systems
-                                </p>
-
-                                <p class="hero-description">
-                                    I am an Information Systems student
-                                    interested in technology, business
-                                    processes, and creating practical digital
-                                    solutions that make everyday tasks easier
-                                    and more organized.
-                                </p>
-
-
-                                <a
-                                    href="#projects"
-                                    class="primary-button"
-                                >
-                                    View My Projects
-                                </a>
-
-                                <a
-                                    href="#contact"
-                                    class="secondary-button"
-                                >
-                                    Contact Me
-                                </a>
-
+                            <div class="hero-label">
+                                Information Systems Student
                             </div>
+
+
+                            <h1 class="hero-title">
+                                Hi, I'm
+                                <span>Kazuyoshi Joseph Ferrer.</span>
+                            </h1>
+
+
+                            <p class="hero-subtitle">
+                                Bachelor of Science in Information Systems
+                            </p>
+
+
+                            <p class="hero-description">
+                                I am an Information Systems student interested
+                                in technology, business processes, and creating
+                                systems that can help make tasks easier and
+                                more organized.
+                            </p>
+
+
+                            <a
+                                href="#projects"
+                                class="primary-button"
+                            >
+                                View My Projects
+                            </a>
+
+
+                            <a
+                                href="#contact"
+                                class="secondary-button"
+                            >
+                                Contact Me
+                            </a>
 
                         </div>
 
 
+                        <!-- SIDE INFORMATION -->
+
                         <div class="col-12 col-md-4 reveal">
 
-                            <div class="about-highlight">
+                            <div class="hero-side-box">
 
-                                <strong>Currently learning</strong>
+                                <h3>
+                                    Currently learning
+                                </h3>
 
-                                <br><br>
-
-                                Programming, databases, web development,
-                                business processes, and information systems.
+                                <p>
+                                    Programming, databases, web development,
+                                    business processes, and information
+                                    systems.
+                                </p>
 
                             </div>
 
@@ -820,6 +989,9 @@
 
 
                 <div class="about-box reveal">
+
+                    <div class="about-accent"></div>
+
 
                     <div class="row g-4">
 
@@ -886,6 +1058,7 @@
                             Technical Skills
                         </h3>
 
+
                         <span class="skill-badge">
                             C#
                         </span>
@@ -918,6 +1091,7 @@
                         <h3>
                             Other Skills
                         </h3>
+
 
                         <span class="skill-badge">
                             Research
@@ -981,6 +1155,7 @@
                                         Cinnamoroll Cake Shop Payroll System
                                     </h3>
 
+
                                     <p>
                                         A school project that involved
                                         creating a payroll system for a cake
@@ -1040,6 +1215,7 @@
                                     <h3>
                                         CRM Research Project
                                     </h3>
+
 
                                     <p>
                                         A research project that explored how
@@ -1213,6 +1389,7 @@
                                 Find me online
                             </h3>
 
+
                             <p>
                                 You can also connect with me through my
                                 GitHub and LinkedIn profiles.
@@ -1265,6 +1442,7 @@
             © 2026 Kazuyoshi Joseph Ferrer
         </p>
 
+
         <p class="mb-0">
 
             <a
@@ -1300,28 +1478,41 @@
     <!-- Scroll Reveal -->
 
     <script>
-        const revealElements = document.querySelectorAll(".reveal");
 
-        const observer = new IntersectionObserver(
-            (entries) => {
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-                entries.forEach((entry) => {
 
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
+        const observer =
+            new IntersectionObserver(
 
-                });
+                (entries) => {
 
-            },
-            {
-                threshold: 0.15
-            }
-        );
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
 
         revealElements.forEach((element) => {
+
             observer.observe(element);
+
         });
+
     </script>
 
 </body>
