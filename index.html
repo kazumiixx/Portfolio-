@@ -78,9 +78,9 @@
         ========================== */
 
         #home {
-            min-height: 100vh;
-            padding-top: 120px;
-            padding-bottom: 80px;
+            min-height: auto;
+            padding-top: 100px;
+            padding-bottom: 50px;
         }
 
         .profile-image {
@@ -150,12 +150,12 @@
         ========================== */
 
         .section-padding {
-            padding: 100px 0;
+            padding: 55px 0;
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 35px;
         }
 
         .section-heading h2 {
@@ -209,7 +209,7 @@
 
         .project-wrapper {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 10px;
         }
 
         .project-image {
@@ -218,7 +218,7 @@
             object-fit: cover;
             border-radius: 50% !important;
             display: block;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             border: 6px solid white;
             box-shadow: 0 8px 20px rgba(80, 150, 190, 0.25);
             transition: transform 0.3s ease;
@@ -362,7 +362,7 @@
             color: white;
             text-align: center;
             padding: 25px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         .footer-link {
@@ -400,7 +400,16 @@
         @media (max-width: 768px) {
 
             #home {
-                padding-top: 100px;
+                padding-top: 90px;
+                padding-bottom: 35px;
+            }
+
+            .section-padding {
+                padding: 45px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 30px;
             }
 
             .name-box h1 {
@@ -408,7 +417,7 @@
             }
 
             .about-box {
-                margin-top: 30px;
+                margin-top: 15px;
                 padding: 25px;
             }
 
@@ -517,7 +526,7 @@
 
                 <!-- PROFILE PICTURE - UPPER CENTER -->
 
-                <div class="text-center mb-5">
+                <div class="text-center mb-4">
 
                     <img
                         src="images/profile.jpg"
@@ -530,7 +539,7 @@
 
                 <!-- NAME LEFT + ABOUT ME RIGHT -->
 
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4">
 
                     <!-- NAME AND PROGRAM - LOWER LEFT -->
 
@@ -675,7 +684,7 @@
                 </div>
 
 
-                <div class="row g-5">
+                <div class="row g-4">
 
 
                     <!-- PROJECT 1 -->
@@ -689,7 +698,6 @@
                                 alt="Cinnamoroll Cake Shop Payroll System"
                                 class="project-image"
                             >
-
 
                             <div class="card project-card h-100">
 
@@ -747,7 +755,6 @@
                                 alt="CRM Research Project"
                                 class="project-image"
                             >
-
 
                             <div class="card project-card h-100">
 
@@ -1034,9 +1041,7 @@
                 entries.forEach((entry) => {
 
                     if (entry.isIntersecting) {
-
                         entry.target.classList.add("show");
-
                     }
 
                 });
@@ -1049,9 +1054,7 @@
 
 
         reveals.forEach((element) => {
-
             observer.observe(element);
-
         });
 
     </script>
